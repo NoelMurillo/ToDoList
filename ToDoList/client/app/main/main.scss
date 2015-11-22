@@ -1,5 +1,7 @@
+
 .thing-form {
     margin: 20px 0;
+    padding: 60px;
 }
 
 #banner {
@@ -8,18 +10,18 @@
 }
 
 #banner h1 {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 1;
     letter-spacing: -1px;
 }
 
 .hero-unit {
     position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
+    padding: 60px 15px;
+    color: #FFFFFF;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+    background: #123459;
 }
 
 .footer {
@@ -31,4 +33,18 @@
 
 .navbar-text {
   margin-left: 15px;
+}
+
+////////////////////////////////////////////
+
+.list-group {
+    margin-bottom: 1px;
+    padding-left: 0;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin-bottom: 20px;
 }

@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/todolist-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

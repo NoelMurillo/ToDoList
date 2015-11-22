@@ -31,6 +31,7 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
+  //  req.body.user = req.user;
   Thing.create(req.body, function(err, thing) {
     if(err) { return handleError(res, err); }
     return res.status(201).json(thing);
@@ -51,6 +52,17 @@ exports.update = function(req, res) {
   });
 };
 
+/*function handleUnauthorized(req, res) {
+  return function(entity) {
+    if (!entity) {return null;}
+    if(entity.user._id.toString() !== req.user._id.toString()){
+      res.send(403).end();
+      return null;
+    }
+    return entity;
+  }
+};*/
+
 // Deletes a thing from the DB.
 exports.destroy = function(req, res) {
   Thing.findById(req.params.id, function (err, thing) {
@@ -60,7 +72,10 @@ exports.destroy = function(req, res) {
       if(err) { return handleError(res, err); }
       return res.status(204).send('No Content');
     });
-  });
+  })/*.then(handleEntityNotFound(res))
+    .then(handleUnauthorized(req, res))
+    .then(removeEntity(res))
+    .catch(handleError(res));*/
 };
 
 function handleError(res, err) {
