@@ -9,49 +9,81 @@
   </div>
 </header>
 
-<div class="col-md-2">
-  <ul class="nav nav-pills nav-stacked">
-    <li role="presentation" class="active"><a href="#">Categories</a></li>
-    <li role="presentation"><a href="#">Personal</a></li>
-    <li role="presentation"><a href="#">Others</a></li>
-  </ul>
-</div>
 
+<div class= "container">
 
-<div class="container">
-  <form ng-submit="addThing()">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="New task" ng-model="newThing" ng-model-instant>
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" >Add </button>
-      </span>
+<form ng-submit="addThing()">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="New task" ng-model="newThing" ng-model-instant>
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-primary" >Add </button>
+      <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseE" aria-expanded="false" aria-controls="collapseE">
+        Add description
+      </a>
     </div>
-  </form>
-
-
-  <div class="row">
-    <div ng-repeat="thing in awesomeThings">
-        <ul class="list-group">
-          <li class="list-group-item">
-
-            <a class="checker" ng-click="check(thing)" href=""><i id="{{thing._id}}" ng-class="{'fa fa-check-square': thing.completed, 'fa fa-square-o':!thing.completed}"></i></a>
-              -> {{thing.name}}
-              <a href="" ng-click = "deleteThing(thing)">   <i class="fa fa-times"></i> </a>
-
-            <li data-toggle="collapse" data-target="#{{thing._id}}" class="ListaComp">
-              <a href="#" tooltip="{{thing.info}}">
-
-
-              <div class="collapse" id="{{thing._id}}">
-              
-            </a>
-
-          </li>
-        </li>
+    <div class="collapse" id="collapseE">
+      <div class="well">
+        <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon2">Desc:</span>
+                <input type="text" class="form-control" placeholder="Task descriptions">
+        </div>
       </div>
-        </ul>
+    </span>
   </div>
+</form>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">Categories</a></li>
+      <li role="presentation"><a href="#">Personal</a></li>
+      <li role="presentation"><a href="#">Others</a></li>
+    </ul>
+  </div>
+
+
+
+
+  <div class="col-md-4">
+      <div ng-repeat="thing in awesomeThings">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a class="checker" ng-click="check(thing)" href=""><i id="{{thing._id}}" ng-class="{'fa fa-check-square': thing.completed, 'fa fa-square-o':!thing.completed}"></i></a>
+                -> {{thing.name}}
+                <a href="" ng-click = "deleteThing(thing)">   <i class="fa fa-times"></i> </a>
+
+              <!--li data-toggle="collapse" data-target="#{{thing._id}}" class="ListaComp">
+                <!---a href="#" tooltip="{{thing.info}}"> </a-->
+                <div class="collapse" id="{{thing._id}}">
+
+
+
+            </li>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-4" >
+    <ul class="nav nav-tabs nav-stacked">
+      <li role="presentation" class="active"><a href="#">All</a></li>
+      <li role="presentation"><a href="#">Uncomplete</a></li>
+      <li role="presentation"><a href="#">Complete</a></li>
+    </ul>
+  </div>
+
+
 </div>
+
+
+</div>
+
+
+
 
 <footer class="footer">
   <div class="container">
@@ -60,7 +92,6 @@
          <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
       </div>
 </footer>
-</div>
 
 <!--form>
       <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />

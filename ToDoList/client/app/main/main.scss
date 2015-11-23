@@ -1,4 +1,16 @@
 
+.hero-unit {
+    position: relative;
+    padding: 60px 15px;
+    color: #FFFFFF;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: #123459;
+    height: 300px;
+}
+
+/*
+
 .thing-form {
     margin: 20px 0;
     padding: 60px;
@@ -15,15 +27,6 @@
     letter-spacing: -1px;
 }
 
-.hero-unit {
-    position: relative;
-    padding: 60px 15px;
-    color: #FFFFFF;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #123459;
-    height: 300px;
-}
 
 .footer {
     text-align: center;
@@ -37,7 +40,8 @@
 }
 
 .container {
-    width: 450px;
+    //width: 450px;
+    padding-top: 10px;
 }
 
 ////////////////////////////////////////////
@@ -49,20 +53,14 @@
   padding-top: 60px;
 }
 
-#ima {
-    border: 0;
-    height: 100px;
-  }
-
-.row {
-    margin-left: -120px;
-    margin-right: -120px;
-}
 
 .list-group {
     margin-bottom: 1px;
     padding-left: 0;
 }
+
+
+*/
 
 .input-group {
     position: relative;
@@ -72,9 +70,14 @@
 }
 
 .dropdown-menu{
-  min-width: 290px;
+  min-width: 240px;
   list-style: none;
   font-size: 14px;
   text-align: right;
 
 }
+
+#ima {
+    border: 0;
+    height: 100px;
+  }

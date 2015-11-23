@@ -18,6 +18,10 @@ var ThingSchema = new Schema({
       type: Date,
       default: Date.now
   },
+  category: {
+    type: String,
+    default: 'Personal'    
+  }
 });
 /*
 ThingSchema.pre('find', function(next){

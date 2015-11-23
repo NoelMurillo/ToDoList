@@ -37,14 +37,17 @@ angular.module('toDoListApp')
   };
 
   $scope.createCategories= function(){
-    
+
   }
 
     $scope.check = function(thing){
+      //console.console.log(thing.completed);
       if(thing.completed){
         thing.completed =  false;
       }
       thing.completed= true;
+      console.log(thing.completed);
+        //$http.put('/api/things/' + thing._id);
     };
 
     $scope.deleteThing = function(thing) {
