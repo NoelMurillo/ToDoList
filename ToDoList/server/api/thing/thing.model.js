@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var ThingSchema = new Schema({
   name: String, /* message */
+  desc: String,
   completed: {
     type: Boolean,
     default: false

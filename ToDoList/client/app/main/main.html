@@ -1,15 +1,24 @@
+
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>To Do List App</h1>
     <p class="lead"> Web application made for organization </p>
-    <img src="assets/images/iconToDo.png" alt="I'm Yeoman">
+    <img src="assets/images/iconToDo.png" alt="I'm Yeoman" id="ima">
   </div>
 </header>
 
+<div class="col-md-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active"><a href="#">Categories</a></li>
+    <li role="presentation"><a href="#">Personal</a></li>
+    <li role="presentation"><a href="#">Others</a></li>
+  </ul>
+</div>
+
+
 <div class="container">
-  <br/>
   <form ng-submit="addThing()">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="New task" ng-model="newThing" ng-model-instant>
@@ -19,16 +28,28 @@
     </div>
   </form>
 
+
   <div class="row">
     <div ng-repeat="thing in awesomeThings">
         <ul class="list-group">
           <li class="list-group-item">
+
             <a class="checker" ng-click="check(thing)" href=""><i id="{{thing._id}}" ng-class="{'fa fa-check-square': thing.completed, 'fa fa-square-o':!thing.completed}"></i></a>
-            -> {{thing.name}}
-            <a href="" ng-click = "deleteThing(thing)">   <i class="fa fa-times"></i> </a>
+              -> {{thing.name}}
+              <a href="" ng-click = "deleteThing(thing)">   <i class="fa fa-times"></i> </a>
+
+            <li data-toggle="collapse" data-target="#{{thing._id}}" class="ListaComp">
+              <a href="#" tooltip="{{thing.info}}">
+
+
+              <div class="collapse" id="{{thing._id}}">
+              
+            </a>
+
           </li>
+        </li>
+      </div>
         </ul>
-    </div>
   </div>
 </div>
 
@@ -37,8 +58,9 @@
       <p>Angular Fullstack v2.1.1 |
         <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
          <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
+      </div>
 </footer>
+</div>
 
 <!--form>
       <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />

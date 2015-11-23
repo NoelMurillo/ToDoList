@@ -22,6 +22,7 @@
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     background: #123459;
+    height: 300px;
 }
 
 .footer {
@@ -35,7 +36,28 @@
   margin-left: 15px;
 }
 
+.container {
+    width: 450px;
+}
+
 ////////////////////////////////////////////
+.col-md-2{
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 60px;
+}
+
+#ima {
+    border: 0;
+    height: 100px;
+  }
+
+.row {
+    margin-left: -120px;
+    margin-right: -120px;
+}
 
 .list-group {
     margin-bottom: 1px;
@@ -47,4 +69,12 @@
     display: table;
     border-collapse: separate;
     margin-bottom: 20px;
+}
+
+.dropdown-menu{
+  min-width: 290px;
+  list-style: none;
+  font-size: 14px;
+  text-align: right;
+
 }
